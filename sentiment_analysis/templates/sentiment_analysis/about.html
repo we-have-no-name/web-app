@@ -1,0 +1,32 @@
+{% extends 'sentiment_analysis/base.html' %}
+{% load staticfiles %}
+{% block title %}About Us{% endblock %}
+{% block header_assets %}{% endblock %}
+{% block container %}
+    <div class="container">
+        <div class="row">
+             <div class="col-sm-12 col-md-8">
+                <h2>About Us</h2>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+                    neque,
+                    auctor
+                    sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit.
+                    Vestibulum
+                    ac
+                    diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in,
+                    elementum
+                    id
+                    enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan
+                    tincidunt.
+                    Sed
+                    porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                    Vivamus
+                    suscipit
+                    tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta.</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <img class="auto-fit" src="{% static 'sentiment_analysis/imgs/photo_2017-06-26_14-19-52.jpg' %}" alt="image">
+            </div>
+        </div>
+    </div>
+{% endblock %}
