@@ -2,11 +2,11 @@ import tensorflow as tf
 from tensorflow.contrib import rnn
 
 
-class NNGraph():
-    '''
+class NNGraph:
+    """
     Neural Network Graph
     Build a TensorFlow graph that can be used as a neural network for classifying text
-    '''
+    """
 
     def __init__(self, batch_size=None, num_steps=90, use_default_network=False, **kwargs):
         '''

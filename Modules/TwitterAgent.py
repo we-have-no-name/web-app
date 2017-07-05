@@ -1,10 +1,12 @@
+import csv
+import json
+import os
+import pickle
+from datetime import datetime
 import tweepy
-from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-import csv, json, pickle
-from datetime import datetime
-import os
+from tweepy.streaming import StreamListener
 
 
 class StreamDataStorage():

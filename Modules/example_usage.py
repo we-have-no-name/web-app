@@ -1,4 +1,4 @@
-'''
+"""
 An example of the usage of the TwitterAgent and the ClassifierInterface
 
 Runs the TwitterAgent to get a stream of tweets and the ClassifierInterface to classify them
@@ -7,8 +7,8 @@ Requirements:
 a config.json file of shape
 {
 	"data_path": "",
-	
-	"consumer_key": "",
+
+    "consumer_key": "",
 	"consumer_secret": "",
 
 	"access_token": "",
@@ -26,19 +26,19 @@ or
 	with labels ranging from 0:7
 > then to train a session
 	run Classifier.py as a script
-'''
-from ClassifierInterface import ClassifierInterface, IncomingQueue
-from TwitterAgent import TwitterAgent
+"""
+from .ClassifierInterface import ClassifierInterface, IncomingQueue
+from .TwitterAgent import TwitterAgent
 
 # needed for this use case only
-import threading, time, sys
+import threading, sys
 import numpy as np
 
 
 def main():
-    '''
+    """
     Runs two threads, one to receive a tweets stream and another to classify them.
-    '''
+    """
     ta = TwitterAgent()
     incoming_queue = IncomingQueue()
     c = ClassifierInterface(incoming_queue)
@@ -79,9 +79,9 @@ non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
 
 
 def use_ready_queue(ready_queue):
-    '''
+    """
     Prints the classified tweets.
-    '''
+    """
     tweet = ready_queue.get()
     probs = ', '.join(
         ['{}: {:.3}'.format(sent_map[l], tweet.sentiment[l]) for l in np.argsort(tweet.sentiment)[::-1][:3] if

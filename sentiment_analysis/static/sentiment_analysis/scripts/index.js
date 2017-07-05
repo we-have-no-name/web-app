@@ -3,10 +3,6 @@
  */
 $(function () {
 
-    $('body').on('change.bfhselectbox', function () {
-        $('#county-form').submit();
-    });
-
     Highcharts.chart('pichart', {
         chart: {
             plotBackgroundColor: null,

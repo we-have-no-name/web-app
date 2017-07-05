@@ -1,7 +1,7 @@
-from DataSetReader import DataSetReader
-from TweetToWordIndices import TweetToWordIndices
-from NNGraph import NNGraph
-from AccuracyAnalysis import AccuracyAnalysis
+from .DataSetReader import DataSetReader
+from .TweetToWordIndices import TweetToWordIndices
+from .NNGraph import NNGraph
+from .AccuracyAnalysis import AccuracyAnalysis
 import tensorflow as tf
 import numpy as np
 import os, time

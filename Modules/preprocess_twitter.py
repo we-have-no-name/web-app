@@ -9,7 +9,6 @@ Translation of Ruby script to create features for GloVe vectors for Twitter data
 http://nlp.stanford.edu/projects/glove/preprocess-twitter.rb
 """
 
-import sys
 import re
 
 FLAGS = re.MULTILINE | re.DOTALL

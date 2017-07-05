@@ -1,4 +1,4 @@
-from TweetToWordIndices import TweetToWordIndices
+from .TweetToWordIndices import TweetToWordIndices
 import csv, json
 import numpy as np
 import os

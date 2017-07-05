@@ -1,15 +1,13 @@
-import preprocess_twitter
-import html
-from nltk.tokenize import sent_tokenize, TreebankWordTokenizer
-import tensorflow as tf
-from tensorflow.contrib import rnn
-import pickle, csv, json
+from nltk.tokenize import TreebankWordTokenizer
+import pickle, json
 import os
 import numpy as np
 import re
+import html
+from .preprocess_twitter import tokenize
 
 
-class TweetToWordIndices():
+class TweetToWordIndices:
     '''
     Converts the text of tweets into the word index of each word from the GloVe word embedding
     The text is preprocessed to be the best match possible to the vocabulary in GloVe
@@ -90,7 +88,7 @@ class TweetToWordIndices():
 
     def tokenize(self, txt):
         '''Preprocess text and tokenize it'''
-        txt = preprocess_twitter.tokenize(txt)
+        txt = tokenize(txt)
         txt = self.unescape_html(txt)
         txt = self.split_punctuations(txt)
         txt = self.split_emojis(txt)

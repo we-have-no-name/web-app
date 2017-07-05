@@ -56,32 +56,8 @@
 <div class="container">
     <div class="row">
         {% block container %}
-            <div class="col-sm-3 col-lg-2">
-                <!-- normal collapsible navbar markup -->
-                <aside class="counties-cointainer">
-                    <form action="{% url 'sentiment_analysis:index' %}" method="get" id="county-form">
-                        {% csrf_token %}
-                        <div class="bfh-selectbox bfh-countries" data-country="{{ country }}" data-flags="true" data-name="country">
-                            <input type="hidden" value="">
-                            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-                                <span class="bfh-selectbox-option input-medium" data-option=""></span>
-                                <b class="caret"></b>
-                            </a>
-                            <div class="bfh-selectbox-options">
-                                <input type="text" class="bfh-selectbox-filter">
-                                <div role="listbox">
-                                    <ul role="option">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </form><!-- form -->
-                </aside>
-            </div>
-            <div class="col-sm-9 col-lg-10">
-                <!-- your page content -->
-                <div id="pichart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-            </div>
+            <!-- your page content -->
+            <div id="pichart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
         {% endblock %}
     </div>
 </div>

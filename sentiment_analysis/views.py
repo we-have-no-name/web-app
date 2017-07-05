@@ -3,8 +3,7 @@ from django.shortcuts import render
 
 # load index page
 def index(request):
-    country = request.GET.get('country', '')
-    return render(request, 'sentiment_analysis/base.html', {'country': country})
+    return render(request, 'sentiment_analysis/base.html')
 
 
 def about(request):

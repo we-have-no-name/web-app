@@ -1,5 +1,5 @@
-from NNGraph import NNGraph
-from Classifier import Classifier
+from .NNGraph import NNGraph
+from .Classifier import Classifier
 import os
 
 

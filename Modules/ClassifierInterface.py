@@ -1,6 +1,6 @@
 from queue import Queue
 import json
-from Classifier import Classifier
+from .Classifier import Classifier
 
 
 class Tweet():
