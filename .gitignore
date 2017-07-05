@@ -1,1 +1,7 @@
 .idea/
+Modules/twitter_data/
+sentimentAnalysis/__pycache__/
+sentiment_analysis/__pycache__/
+sentiment_analysis/migrations/__pycache__/
+templates/
+Modules/config.json
