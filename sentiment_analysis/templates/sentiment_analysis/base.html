@@ -76,7 +76,84 @@
 {# jquery #}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="{% static 'sentiment_analysis/bootstrap-form-helpers/js/bootstrap-formhelpers.min.js' %}"></script>
-<script src="{% static 'sentiment_analysis/scripts/index.js' %}"></script>
+<script>
+    /**
+     * Created by ahmed on 1/7/2017.
+     */
+    $(function () {
+
+        Highcharts.chart('pichart', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: "Data for Date: " + new Date().toJSON().slice(0, 10).replace(/-/g, '/')
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Feeling',
+                colorByPoint: true,
+                data: [{
+                    name: 'Happy',
+                    y: {{ data.happy }},
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Love',
+                    y: {{ data.love }}
+                }, {
+                    name: 'Sad',
+                    y: {{ data.sad }}
+                }, {
+                    name: 'Hopeful',
+                    y: {{ data.hopeful }}
+                }, {
+                    name: 'Angry',
+                    y: {{ data.angry }}
+                }, {
+                    name: 'Hate',
+                    y: {{ data.hate }}
+                }, {
+                    name: 'Natural',
+                    y: {{ data.neutral }}
+                }, {
+                    name: 'Hopeless',
+                    y: {{ data.hopeless }}
+                }
+                ]
+            }]
+        });
+    });
+
+    /*
+     1 = happy
+     2 = love
+     3 = hopeful
+     4= nutral
+     5 = angry
+     6 = hopeless
+     7 = hate
+     8 = sad
+     */
+</script>
 {# bootstrap #}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

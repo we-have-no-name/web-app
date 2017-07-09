@@ -74,17 +74,17 @@ WSGI_APPLICATION = 'sentimentAnalysis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'NAME': 'grad_project',
-#         'ENGINE': 'django.db.backends.mysql',
-#         'USER': 'ahmed',
-#         'PASSWORD': 'a',
-#         'OPTIONS': {
-#             'autocommit': True,
-#         },
-#     }
-# }
+DATABASES = {
+    'default': {
+        'NAME': 'grad_project',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'ahmed',
+        'PASSWORD': 'a',
+        'OPTIONS': {
+            'autocommit': True,
+        },
+    }
+}
 
 
 # Password validation

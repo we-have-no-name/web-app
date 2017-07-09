@@ -1,11 +1,16 @@
-from .DataSetReader import DataSetReader
-from .TweetToWordIndices import TweetToWordIndices
-from .NNGraph import NNGraph
-from .AccuracyAnalysis import AccuracyAnalysis
 import tensorflow as tf
 import numpy as np
-import os, time
+import os, sys, time
 import json
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
+from ml_modules.DataSetReader import DataSetReader
+from ml_modules.TweetToWordIndices import TweetToWordIndices
+from ml_modules.NNGraph import NNGraph
+from ml_modules.AccuracyAnalysis import AccuracyAnalysis
 
 
 class Classifier:
@@ -85,8 +90,8 @@ class Classifier:
         Initializes a TensorFlow session
         '''
         self.sess.run(self.graph.global_variables_initializer)
-        self.graph.embedding_saver.restore(self.sess, os.path.join(self.data_path, "d" + str(
-            self.graph.embedding_dim) + "_word_embedding", "TF_Variables", "Embedding"))
+        self.graph.embedding_saver.restore(self.sess, self.data_path, "d" + str(
+            self.graph.embedding_dim) + "_word_embedding", "TF_Variables", "Embedding")
         if self.trace_run: self.init_train_writer()
         return True
 
