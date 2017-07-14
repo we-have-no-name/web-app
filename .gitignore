@@ -3,4 +3,4 @@ ml_modules/twitter_data/
 sentimentAnalysis/__pycache__/
 sentiment_analysis/__pycache__/
 sentiment_analysis/migrations/
-ml_modules/config.json
+config.json

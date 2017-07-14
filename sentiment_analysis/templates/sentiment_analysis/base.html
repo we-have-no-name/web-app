@@ -90,7 +90,7 @@
                 type: 'pie'
             },
             title: {
-                text: "Data for Date: " + new Date().toJSON().slice(0, 10).replace(/-/g, '/')
+                text: "Data for Date: {{ data.date }}"
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
